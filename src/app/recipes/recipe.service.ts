@@ -1,3 +1,4 @@
+import { EventEmitter } from "@angular/core";
 import { Recipe } from "./recipe.model";
 
 export class RecipeService {
@@ -8,6 +9,8 @@ export class RecipeService {
         new Recipe('Last one Test Recipe', 'This is simply a test', 'https://www.inspiredtaste.net/wp-content/uploads/2016/07/Pancake-Recipe-1-1200.jpg')
       ];
 
+    recipeSelected = new EventEmitter<Recipe>();
+      
     getRecipes() {
         return this.recipes.slice();
     }
