@@ -18,7 +18,7 @@ export class RecipeService {
             [new Ingredient('Buns', 2), new Ingredient('Meat', 20)]
             ),
         new Recipe('Greece Salad ', 
-            'This is best salad!', 
+            'This is the best salad!', 
             'https://www.mygreekdish.com/wp-content/uploads/2013/05/Traditional-Greek-Salad-recipe-Horiatiki-Xoriatiki-1-scaled.jpg',
             [new Ingredient('Salad', 2), new Ingredient('Feta', 20)]
             )
