@@ -11,10 +11,10 @@ export class RecipeService {
 
     private recipes: Recipe[]  = [
         new Recipe('Tasty Schnitzel', 
-                'A super-tasty Schnitzel - just awesome!', 
-                'https://insanelygoodrecipes.com/wp-content/uploads/2022/03/Homemade-Pork-Schnitzel-with-Cauliflower-and-Lemons.jpg',
-                [new Ingredient('Meat', 1), new Ingredient('Grench Fries', 20)]
-                ),
+            'A super-tasty Schnitzel - just awesome!', 
+            'https://insanelygoodrecipes.com/wp-content/uploads/2022/03/Homemade-Pork-Schnitzel-with-Cauliflower-and-Lemons.jpg',
+            [new Ingredient('Meat', 1), new Ingredient('Grench Fries', 20)]
+            ),
         new Recipe('Big Fat Burger', 
             'What else you need to say?', 
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEBXg9Y0Q8bLvmuTmuveq7ie92J6cw25UPgQ&usqp=CAU',
@@ -53,7 +53,7 @@ export class RecipeService {
     }
 
     deleteRecipe(index: number) {
-        this.recipes.slice(index, 1);
+        this.recipes.splice(index, 1);
         this.recipesChanged.next(this.recipes.slice());
     }
 }
