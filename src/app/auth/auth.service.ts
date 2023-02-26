@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 interface AuthResponseData {
+  kind: string;
   idToken: string;
   email: string;
   refreshToken: string;
@@ -12,7 +13,7 @@ interface AuthResponseData {
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
-    private readonly BASE_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAyk21aaH6HsVK4GyADHMVFUhkJBWbqe8k';
+    private readonly BASE_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwHw-_VOc_T8eekHBBe_trYNWv3rfN4D0';
 
     constructor(private http: HttpClient) {}
 
