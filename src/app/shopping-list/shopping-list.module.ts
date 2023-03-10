@@ -17,6 +17,7 @@ import { ShoppingListComponent } from "./shopping-list.component";
       { path: '', component: ShoppingListComponent}]
     ),
     SharedModule
-  ]
+  ],
+  //providers: [LoggingService]
 })
 export class ShoppingListModule {}

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
+import { LoggingService } from './logging.service';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { CoreModule } from './core.module';
       HttpClientModule,
       SharedModule,
       CoreModule
-    ]
+    ],
+    //providers: [LoggingService]
 })
 export class AppModule { }
