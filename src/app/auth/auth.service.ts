@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { BehaviorSubject, catchError, tap, throwError } from "rxjs";
 import { User } from "./user.model";
+import { enviroment } from "src/environments/environment";
 
 export interface AuthResponseData {
   kind: string;
@@ -17,7 +18,7 @@ export interface AuthResponseData {
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
-    private readonly BASE_API_KEY = 'AIzaSyDwHw-_VOc_T8eekHBBe_trYNWv3rfN4D0';
+    private readonly BASE_API_KEY = enviroment.firebaseAPIKey;
     private readonly BASE_URL_SINGUP = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + this.BASE_API_KEY;
     private readonly BASE_URL_LOGIN = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + this.BASE_API_KEY;
     
