@@ -29,11 +29,11 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
         this.slForm.setValue({
           name: this.editedItem.name,
           amount: this.editedItem.amount
-        })
+        });
       } else {
         this.editMode = false;
       }
-    })
+    });
 
     // this.subscription = this.shoppingListService.startedEditing.subscribe(
     //   (index: number) => {
@@ -53,7 +53,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
     const newIngredient = new Ingredient(value.name, value.amount);
     if(this.editMode) {
       // this.shoppingListService.updateIngredient(this.editedItemIndex, newIngredient);
-      this.store.dispatch(new ShoppingListActions.UpdateIngredient({ingredient: newIngredient}));
+      this.store.dispatch(new ShoppingListActions.UpdateIngredient(newIngredient));
     } else {
       // this.shoppingListService.addIngredient(newIngredient);
       this.store.dispatch(new ShoppingListActions.AddIngredient(newIngredient));
@@ -70,7 +70,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
 
   onDelete(){
     // this.shoppingListService.deleteIngregient(this.editedItemIndex);
-    this.store.dispatch(new ShoppingListActions.DeleteIngregient());
+    this.store.dispatch(new ShoppingListActions.DeleteIngredient());
     this.onClear();
   }
   
