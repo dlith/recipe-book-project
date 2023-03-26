@@ -25,7 +25,7 @@ export class AuthService {
     private readonly BASE_URL_SINGUP = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + this.BASE_API_KEY;
     private readonly BASE_URL_LOGIN = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + this.BASE_API_KEY;
     
-    user = new BehaviorSubject<User>(null);
+    //user = new BehaviorSubject<User>(null);
     private tokenExpirationTimer: any;
 
     constructor(private http: HttpClient, private router: Router, private store: Store<fromApp.AppState>) {}
