@@ -30,33 +30,33 @@ export class AuthService {
 
     constructor(private http: HttpClient, private router: Router, private store: Store<fromApp.AppState>) {}
 
-    signup(email: string, password: string){
-      return this.http.post<AuthResponseData>(this.BASE_URL_SINGUP, 
-        {
-          email: email,
-          password: password,
-          returnSecureToken: true
-        }).pipe(catchError(this.handleError), tap(resData=>{
-          this.handleAuthntication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
-        }));
-    }
+    // signup(email: string, password: string){
+    //   return this.http.post<AuthResponseData>(this.BASE_URL_SINGUP, 
+    //     {
+    //       email: email,
+    //       password: password,
+    //       returnSecureToken: true
+    //     }).pipe(catchError(this.handleError), tap(resData=>{
+    //       this.handleAuthntication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
+    //     }));
+    // }
 
-    login(email: string, password: string) {
-      return this.http.post<AuthResponseData>(this.BASE_URL_LOGIN, 
-        {
-          email: email,
-          password: password,
-          returnSecureToken: true
-        }
-      ).pipe(catchError(this.handleError), tap(resData=>{
-        this.handleAuthntication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
-      }));
-    }
+    // login(email: string, password: string) {
+    //   return this.http.post<AuthResponseData>(this.BASE_URL_LOGIN, 
+    //     {
+    //       email: email,
+    //       password: password,
+    //       returnSecureToken: true
+    //     }
+    //   ).pipe(catchError(this.handleError), tap(resData=>{
+    //     this.handleAuthntication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
+    //   }));
+    // }
 
     logout(){
       //this.user.next(null);
       this.store.dispatch(new AuthActions.Logout());
-      this.router.navigate(['/auth']);
+      // this.router.navigate(['/auth']);
       localStorage.removeItem('userData');
       if(this.tokenExpirationTimer) {
         clearTimeout(this.tokenExpirationTimer);
