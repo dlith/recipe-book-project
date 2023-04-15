@@ -42,7 +42,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
       this.storeSub = this.store.select('recipes').pipe(map(recipesState => {
         return recipesState.recipes.find((recipe, index)=> {
           return index === this.id;
-        })
+        });
       })).subscribe(recipe=>{
         recipeName = recipe.name;
         recipeImagePath = recipe.imagePath;
@@ -55,14 +55,14 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
             }));
           }
         }
-        this.recipeForm = new FormGroup({
-          'name': new FormControl(recipeName, Validators.required),
-          'imagePath': new FormControl(recipeImagePath, Validators.required),
-          'description': new FormControl(recipeDescription, Validators.required),
-          'ingredients': recipeIngredients
-        });
     });
     }
+    this.recipeForm = new FormGroup({
+      'name': new FormControl(recipeName, Validators.required),
+      'imagePath': new FormControl(recipeImagePath, Validators.required),
+      'description': new FormControl(recipeDescription, Validators.required),
+      'ingredients': recipeIngredients
+    });
   }
 
   onAddIngredient(){
