@@ -14,6 +14,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { enviroment } from '../environments/environment';
 import { RecipeEffects } from './recipes/store/recipe.effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { RecipeEffects } from './recipes/store/recipe.effects';
       StoreDevtoolsModule.instrument({ logOnly: enviroment.production }),
       StoreRouterConnectingModule.forRoot(),
       SharedModule,
-      CoreModule
+      CoreModule,
+      BrowserAnimationsModule
     ],
     //providers: [LoggingService]
 })
